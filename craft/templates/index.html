@@ -39,93 +39,73 @@
 	</div>
 
 	<div class="content pure-u-1">
-		<div class="pure-g-r content-ribbon">
-			<div class="pure-u-2-3">
-				<div class="l-box">
-					<h4 class="content-subhead">Some small text</h4>
-
-					<h3>Lorem ipsum dolor sit amet.</h3>
-					<p>
-						Pellentesque hendrerit lobortis ornare. Fusce luctus imperdiet consequat. Nullam quis nunc quis ligula luctus vestibulum non quis libero. Suspendisse tristique nisl ut velit facilisis sit amet lobortis nulla pharetra.
-					</p>
-				</div>
-			</div>
-
-			<div class="pure-u-1-3">
-				<div class="l-box">
-					<img src="http://placehold.it/400x250"
-						 alt="Placeholder image for example.">
-				</div>
+		<div class="posts pure-g">
+			<h1 class="content-subhead pure-u-1">Pinned Post</h1>
+			{% for entry in craft.entries.section('news').limit(6).find() %}
+				<section class="post pure-u-1">
+					<header class="post-header">
+						<!-- <img class="post-avatar"
+							 alt="Tilo Mitra's avatar" src="/img/common/tilo-avatar.png"
+							 height="48" width="48"> -->
+						<h2 class="post-title pure-u-1">{{ entry.title }}</h2>
+						<p class="post-meta pure-u-1">
+							By <a href="#" class="post-author">{{ entry.author }}</a> under
+						</p>
+					</header>
+					<div class="post-description pure-u-1">
+						{{ entry.body }}
+					</div>
+				</section>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="pure-g-r content-ribbon">
+		<div class="pure-u-1-3">
+			<div class="l-box">
+				<img src="http://placehold.it/400x250"
+					 alt="Placeholder image for example.">
 			</div>
 		</div>
-
-		<div class="pure-g-r content-ribbon">
-			<div class="pure-u-1-3">
-				<div class="l-box">
-					<img src="http://placehold.it/400x250"
-						 alt="Placeholder image for example.">
-				</div>
-			</div>
-
-			<div class="pure-u-2-3">
-				<div class="l-box">
-					<h4 class="content-subhead">Some more small text</h4>
-
-					<h3>Etiam iaculis iaculis lobortis.</h3>
-					<p>
-						Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum. Morbi fermentum dui sit amet libero tincidunt rutrum. Nam sodales consequat metus sed accumsan.
-					</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="pure-g-r">
-			<div class="pure-u-1-4">
-				<div class="l-box">
-					<h3>Subheading</h3>
-					<p>
-						Donec suscipit, risus vel venenatis ornare, nibh massa ultrices diam, a elementum metus felis sit amet eros. Phasellus pellentesque euismod massa sed pellentesque.
-					</p>
-				</div>
-			</div>
-
-			<div class="pure-u-1-4">
-				<div class="l-box">
-					<h3>Subheading</h3>
-					<p>
-						Donec suscipit, risus vel venenatis ornare, nibh massa ultrices diam, a elementum metus felis sit amet eros. Phasellus pellentesque euismod massa sed pellentesque.
-					</p>
-				</div>
-			</div>
-
-			<div class="pure-u-1-4">
-				<div class="l-box">
-					<h3>Subheading</h3>
-					<p>
-						Donec suscipit, risus vel venenatis ornare, nibh massa ultrices diam, a elementum metus felis sit amet eros. Phasellus pellentesque euismod massa sed pellentesque.
-					</p>
-				</div>
-			</div>
-
-			<div class="pure-u-1-4">
-				<div class="l-box">
-					<h3>Subheading</h3>
-					<p>
-						Donec suscipit, risus vel venenatis ornare, nibh massa ultrices diam, a elementum metus felis sit amet eros. Phasellus pellentesque euismod massa sed pellentesque.
-					</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="pure-g-r">
-			<div class="pure-u-1">
-				<div class="l-box ribbon">
-					<h2>Get started now.</h2>
-					<a href="#" class="pure-button primary-button">Sign up</a>
-				</div>
+		<div class="pure-u-2-3">
+			<div class="l-box">
+				<h4 class="content-subhead">Some more small text</h4>
+				<h3>Etiam iaculis iaculis lobortis.</h3>
+				<p>
+					Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodalespellentesque elementum. Morbi fermentum dui sit amet libero tincidunt rutrum Nam sodales consequat metus sed accumsan.
+				</p>
 			</div>
 		</div>
 	</div>
+	<div class="pure-g-r">
+		<div class="pure-u-1-3">
+			<div class="l-box">
+				{% include "_newsletter" %}
+			</div>
+		</div>
+		<div class="pure-u-1-3">
+			<div class="l-box">
+				{% include "_links" %}
+			</div>
+		</div>
+		<div class="pure-u-1-3">
+			<div class="l-box">
+				<h3>Subheading</h3>
+				<p>
+					Donec suscipit, risus vel venenatis ornare, nibh massa ultrices diam, aelementum metus felis sit amet eros. Phasellus pellentesque euismod massased pellentesque.
+				</p>
+			</div>
+		</div>
+
+	</div>
+	<div class="pure-g-r">
+		<div class="pure-u-1">
+			<div class="l-box ribbon">
+				<h2>Get started now.</h2>
+				<a href="#" class="pure-button primary-button">Sign up</a>
+			</div>
+		</div>
+	</div>
+
 
 	<div class="footer pure-u-1">
 		View the source of this layout to learn more. Made with love by the YUI Team.
